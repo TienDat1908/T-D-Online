@@ -67,8 +67,6 @@ class User < ApplicationRecord
     validates :nick_name, presence: true
   end
 
-  validates :first_name, :last_name, :phone_number, :nick_name, :date_of_birth, :gender, presence: true, on: :update_profile
-
   def full_name
     "#{first_name} #{last_name}"
   end

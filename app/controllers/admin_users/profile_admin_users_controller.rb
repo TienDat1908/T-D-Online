@@ -4,6 +4,10 @@ module AdminUsers
 
     layout 'admin_dashboard'
 
-    def index; end
+    def index
+      @user_count = User.count
+      @post_articles_count = PostArticle.count
+      @feedbacks_count = Feedback.count
+    end
   end
 end
