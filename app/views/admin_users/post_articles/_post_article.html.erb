@@ -1,4 +1,8 @@
-<tr>
+<tr data-controller="clickable-row"
+  data-url="<%= content_post_articles_admin_users_post_article_path(post_article) %>"
+  data-action="click->clickable-row#handleClick"
+  class="cursor-pointer hover:bg-gray-700 hover:text-white"
+>
   <td class="w-0"><%= post_article.id %></td>
   <td><%= post_article.title %></td>
   <td><%= post_article.content %></td>

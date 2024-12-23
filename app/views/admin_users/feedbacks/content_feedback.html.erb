@@ -1,18 +1,23 @@
-<div class="bg-white shadow-lg rounded-xl p-6" style="font-size: 40px; font-weight: 700;">
-  FeedBack No.<%= @feedback.id %>
+<div class="flex items-center bg-white shadow-lg rounded-xl p-6">
+  <%= link_to admin_users_feedbacks_path do %>
+    <i class="fas fa-arrow-left text-2xl"></i>
+  <% end %>
+  <div class="text-[40px] font-bold ml-3">
+    No.<%= @feedback.id %>
+  </div>
 </div>
-<div class="bg-white shadow-lg rounded-xl p-6" style="margin-top: 20px; font-size: 25px; font-weight: 700">
-  TITLE:<br><span style="font-weight: 400"><%= @feedback.title %></span>
+<div class="bg-white shadow-lg rounded-xl p-6 mt-5 text-[25px] font-bold">
+  TITLE:<br><span class="font-normal"><%= @feedback.title %></span>
 </div>
-<div class="bg-white shadow-lg rounded-xl p-6" style="margin-top: 20px; font-size: 25px; font-weight: 700">
-  DESCRIPTION:<br><span style="font-weight: 400"><%= @feedback.description %></span>
+<div class="bg-white shadow-lg rounded-xl p-6 mt-5 text-[25px] font-bold">
+  DESCRIPTION:<br><span class="font-normal"><%= @feedback.description %></span>
 </div>
 <% if @feedback.images.attached? %>
-  <div class="bg-white shadow-lg rounded-xl p-6" style="margin-top: 20px; font-size: 25px; font-weight: 700">
+  <div class="bg-white shadow-lg rounded-xl p-6 mt-5 text-[25px] font-bold">
     IMAGES:
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 10px;">
+    <div class="flex flex-wrap gap-5 mt-2.5">
       <% @feedback.images.each do |image| %>
-        <div style="text-align: center;">
+        <div class="text-center">
           <%= link_to url_for(image), target: "_blank" do %>
             <%= image_tag url_for(image), alt: "Feedback Image", style: "max-width: 200px; max-height: 200px; border-radius: 10px; cursor: pointer;" %>
           <% end %>

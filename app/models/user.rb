@@ -67,14 +67,17 @@ class User < ApplicationRecord
     validates :nick_name, presence: true
   end
 
-  validates :first_name, :last_name, :phone_number, :nick_name, :date_of_birth, :gender, presence: true, on: :update_profile
+  ransacker :full_name do |parent|
+    Arel::Nodes::InfixOperation.new('||',
+                                    parent.table[:first_name], Arel::Nodes.build_quoted(' ')).concat(parent.table[:last_name])
+  end
 
   def full_name
     "#{first_name} #{last_name}"
   end
 
   def self.ransackable_attributes(_auth_object = nil)
-    %w[id email phone_number first_name last_name]
+    %w[id email phone_number full_name]
   end
 
   private
