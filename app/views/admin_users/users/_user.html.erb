@@ -1,7 +1,7 @@
 <tr data-controller="clickable-row"
     data-url="<%= profile_user_admin_users_user_path(user) %>"
     data-action="click->clickable-row#handleClick"
-    class="cursor-pointer"
+    class="cursor-pointer hover:bg-gray-700 hover:text-white"
 >
   <td><%= user.id %></td>
   <td><%= user.first_name %></td>

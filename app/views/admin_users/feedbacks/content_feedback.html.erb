@@ -1,5 +1,10 @@
-<div class="bg-white shadow-lg rounded-xl p-6 text-[40px] font-bold">
-  FeedBack No.<%= @feedback.id %>
+<div class="flex items-center bg-white shadow-lg rounded-xl p-6">
+  <%= link_to admin_users_feedbacks_path do %>
+    <i class="fas fa-arrow-left text-2xl"></i>
+  <% end %>
+  <div class="text-[40px] font-bold ml-3">
+    No.<%= @feedback.id %>
+  </div>
 </div>
 <div class="bg-white shadow-lg rounded-xl p-6 mt-5 text-[25px] font-bold">
   TITLE:<br><span class="font-normal"><%= @feedback.title %></span>

@@ -17,7 +17,11 @@ Rails.application.routes.draw do
         get :profile_user
       end
     end
-    resources :post_articles
+    resources :post_articles do
+      member do
+        get :content_post_articles
+      end
+    end
     resources :profile_admin_users
     resources :feedbacks do
       member do

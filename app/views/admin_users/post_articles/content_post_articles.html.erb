@@ -1,0 +1,31 @@
+<div class="flex items-center bg-white shadow-lg rounded-xl p-6">
+  <%= link_to admin_users_post_articles_path do %>
+    <i class="fas fa-arrow-left text-2xl"></i>
+  <% end %>
+  <div class="text-[40px] font-bold ml-3">
+    No.<%= @post_articles.id %>
+  </div>
+</div>
+<div class="flex items-center justify-between bg-white shadow-lg rounded-xl p-6 mt-5">
+  <div class="text-[25px] font-bold">Created:</div>
+  <div class="flex gap-[30px]">
+    <div class="text-black border border-solid border-[#727272] rounded-lg p-2">
+      <div class="text-[12px]">Created at:</div>
+      <div class="text-[18px] font-bold text-center"><%= @post_articles&.created_at&.strftime("%m-%d-%Y, %I:%M %p") %></div>
+    </div>
+    <div class="text-black border border-solid border-[#727272] rounded-lg p-2">
+      <div class="text-[12px]">Updated at:</div>
+      <div class="text-[18px] font-bold text-center"><%= @post_articles&.updated_at&.strftime("%m-%d-%Y, %I:%M %p") %></div>
+    </div>
+    <div class="text-black border border-solid border-[#727272] rounded-lg p-2">
+      <div class="text-[12px]">Previous updated at:</div>
+      <div class="text-[18px] font-bold text-center"><%= @post_articles&.previous_updated_at&.strftime("%m-%d-%Y, %I:%M %p") %></div>
+    </div>
+  </div>
+</div>
+<div class="bg-white shadow-lg rounded-xl p-6 mt-5 text-[25px] font-bold">
+  TITLE:<br><span class="text-[18px] font-normal"><%= @post_articles.title %></span>
+</div>
+<div class="bg-white shadow-lg rounded-xl p-6 mt-5 text-[25px] font-bold">
+  CONTENT:<br><span class="text-[18px] font-normal"><%= @post_articles.content %></span>
+</div>

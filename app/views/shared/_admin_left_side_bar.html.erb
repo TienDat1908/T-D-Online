@@ -3,31 +3,31 @@
 
   <ul class="space-y-4 flex-grow p-4">
     <%= link_to admin_users_dashboard_index_path do %>
-      <li class="block text-white rounded p-3 <%= 'bg-gray-700' if current_page?(admin_users_dashboard_index_path) %> hover:bg-gray-700">
+      <li class="block text-white rounded p-3 <%= current_page?(admin_users_dashboard_index_path) ? 'bg-gray-700' : '' %> hover:bg-gray-700">
         <i class="fas fa-tachometer-alt mr-3"></i>
         <span>Dashboard</span>
       </li>
     <% end %>
     <%= link_to admin_users_users_path do %>
-      <li class="block text-white rounded p-3 <%= 'bg-gray-700' if current_page?(admin_users_users_path) %> hover:bg-gray-700">
+      <li class="block text-white rounded p-3 <%= current_page?(admin_users_users_path) || controller_name == 'users' ? 'bg-gray-700' : '' %> hover:bg-gray-700">
         <i class="fas fa-user mr-3"></i>
         <span>User</span>
       </li>
     <% end %>
     <%= link_to admin_users_post_articles_path do %>
-      <li class="block text-white rounded p-3 <%= 'bg-gray-700' if current_page?(admin_users_post_articles_path) %> hover:bg-gray-700">
+      <li class="block text-white rounded p-3 <%= current_page?(admin_users_post_articles_path) || controller_name == 'post_articles' ? 'bg-gray-700' : '' %> hover:bg-gray-700">
         <i class="fas fa-file-alt mr-3"></i>
         <span>Post Article</span>
       </li>
     <% end %>
     <%= link_to admin_users_feedbacks_path do %>
-      <li class="block text-white rounded p-3 <%= 'bg-gray-700' if current_page?(admin_users_feedbacks_path) %> hover:bg-gray-700">
+      <li class="block text-white rounded p-3 <%= current_page?(admin_users_feedbacks_path) || controller_name == 'feedbacks' ? 'bg-gray-700' : '' %> hover:bg-gray-700">
         <i class="fas fa-comment-alt mr-3"></i>
         <span>Feed Back</span>
       </li>
     <% end %>
     <%= link_to admin_users_profile_admin_users_path do %>
-      <li class="block text-white rounded p-3 <%= 'bg-gray-700' if current_page?(admin_users_profile_admin_users_path) %> hover:bg-gray-700">
+      <li class="block text-white rounded p-3 <%= current_page?(admin_users_profile_admin_users_path) ? 'bg-gray-700' : '' %> hover:bg-gray-700">
         <i class="fa fa-shield-alt mr-3"></i>
         <span>Profile Admin User</span>
       </li>
